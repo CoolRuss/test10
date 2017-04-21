@@ -20,7 +20,7 @@ s/#ServerName www.example.com:80/ServerName 127.0.0.1:80/g;' /etc/httpd/conf/htt
 #RUN echo "IncludeOptional sites-available/*.conf" >> /etc/httpd/conf/httpd.conf
 
 RUN systemctl enable httpd.service
-
+#RUN sudo systemctl start httpd.service; sudo systemctl start sshd.service;
 EXPOSE 80 22 8080
-CMD ["/usr/sbin/init"]
-#ENTRYPOINT ["/bin/bash"]
+RUN ["/usr/sbin/httpd"]
+RUN ["/usr/sbin/sshd"]
