@@ -10,8 +10,8 @@ RUN systemctl enable sshd
 ADD index.html /var/www/html
 ADD example.com/index.html /var/www/html/example.com/
 ADD virtual.net/index.html /var/www/html/virtual.net/
-ADD sites-available/virtual.net.conf /etc/httpd/sites-available/
-ADD sites-available/example.com.conf /etc/httpd/sites-available/
+#ADD sites-available/virtual.net.conf /etc/httpd/sites-available/
+#ADD sites-available/example.com.conf /etc/httpd/sites-available/
 #ADD iptablesrules.sh /etc/
 #RUN sudo chmod 0740 /etc/iptablesrules.sh && sudo bash /etc/iptablesrules.sh
 
