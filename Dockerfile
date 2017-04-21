@@ -17,10 +17,10 @@ ADD sites-available/example.com.conf /etc/httpd/sites-available/
 
 RUN sed -i 's/ServerAdmin root@localhost/ServerAdmin artem@example.com/g; \
 s/#ServerName www.example.com:80/ServerName 127.0.0.1:80/g;' /etc/httpd/conf/httpd.conf 
-RUN echo "IncludeOptional sites-available/*.conf" >> /etc/httpd/conf/httpd.conf
+#RUN echo "IncludeOptional sites-available/*.conf" >> /etc/httpd/conf/httpd.conf
 
 RUN systemctl enable httpd.service
 
-EXPOSE 80 22
+EXPOSE 80 22 8080
 CMD ["/usr/sbin/init"]
 #ENTRYPOINT ["/bin/bash"]
